@@ -1,29 +1,29 @@
 import './App.css'
 
 import heroImg from './assets/images/hero.jpg'
-import moviePoster from './assets/images/poster.jpg'
+import moviePoster from './assets/images/poster.webp'
 
 function App() {
 
   return (
     <>
-      <div id='hero'>
-        <img  className='h-screen object-cover flex justify-center items-center' src={heroImg} alt='Boy looks out towards the ocean. Screencap from Moonlight (2016).'/>
+      <div id='hero' className='relative h-screen'>
+        <img className='object-cover h-full absolute inset-0' src={heroImg} alt='Boy looks out towards the ocean. Screencap from Moonlight (2016).'/>
         <h1 className='site-title uppercase absolute inset-0 flex justify-center items-center'>Moonlight</h1>
       </div>
 
-      <div id='summary'className='flex flex-col'>
-        <div className='grid grid-cols-2'>
+      <div id='summary' className='p-8 bg-gray relative flex flex-col gap-4'>
+        <div className='grid grid-cols-2 gap-4'>
           <div className='flex flex-col'>
-            <h6 className='uppercase'>Director</h6>
+            <h6 className='section-title uppercase'>Director</h6>
             <p>Barry Jenkins</p>
           </div>
           <div className='flex flex-col'>
-            <h6 className='uppercase'>Release</h6>
+            <h6 className='section-title uppercase'>Release</h6>
             <p>2016</p>
           </div>
           <div className='flex flex-col'>
-            <h6 className='uppercase'>Runtime</h6>
+            <h6 className='section-title uppercase'>Runtime</h6>
             <p>111 minutes</p>
           </div>
         </div>
@@ -34,17 +34,17 @@ function App() {
         </div>
       </div>
 
-      <div className='flex flex-col'>
+      <div className='tinted-section flex flex-col'>
         <div>
-          <img src={moviePoster} alt='Poster for Moonlight (2016).'/>
+          <img className='p-6' src={moviePoster} alt='Poster for Moonlight (2016).'/>
         </div>
-        <div className='grid grid-cols-2'>
-          <div className='flex flex-col'>
-            <h6 className='uppercase'>Distributed by</h6>
+        <div className='p-8 grid grid-cols-2 gap-4'>
+          <div className='flex flex-col '>
+            <h6 className='tinted-section-title uppercase'>Distributed by</h6>
             <p>A24</p>            
           </div>
           <div className='flex flex-col'>
-            <h6 className='uppercase'>Production Companies</h6>
+            <h6 className='tinted-section-title uppercase'>Production Companies</h6>
             <p>A24</p>
             <p>Plan B Entertainment</p>
             <p>Pastel Productions</p>
@@ -56,9 +56,9 @@ function App() {
 
       </div>
 
-      <div className='flex flex-col'>
+      <div id='cast-crew' className='tinted-section p-8 flex flex-col gap-8'>
         <div>
-          <h6 className='uppercase'>Crew</h6>
+          <h6 className='tinted-section-title uppercase'>Crew</h6>
           <p><span className='uppercase'>Screenplay</span>: Barry Jenkins</p>
           <p><span className='uppercase'>Story</span>: Tarell Alvin McCraney</p>
           <p><span className='uppercase'>Producers</span>: Adele Romanski, Dede Gardner, Jeremy Kleiner</p>
@@ -67,7 +67,7 @@ function App() {
           <p><span className='uppercase'>Editors</span>: Joi McMillon, Nat Sanders</p>
         </div>
         <div>
-          <h6 className='uppercase'>Cast</h6>
+          <h6 className='tinted-section-title uppercase'>Cast</h6>
           <p>Trevante Rhodes as Adult Chiron</p>
           <p>Ashton Sanders as Teen Chiron</p>
           <p>Alex Hibbert as Child Chiron</p>
@@ -80,8 +80,8 @@ function App() {
         </div>
       </div>
 
-      <div id='awards'>
-        <h6 className='uppercase'>Awards</h6>
+      <div id='awards' className='p-8'>
+        <h6 className='section-title uppercase'>Awards</h6>
         <div className='flex flex-col'>
           <p>2017 Academy Award Winner</p>
           <p>Best Picture</p>
@@ -100,7 +100,7 @@ function App() {
         </div>
       </div>
 
-      <footer>
+      <footer className='m-16 flex flex-col justify-center items-center'>
         <p>Prod. 2026 by <a href='https://fjtria.github.io/' target='_blank' rel='noopener noreferrer'>FJTRIA</a></p>
         <p>All media property of <a href='https://a24films.com/films/moonlight' target='_blank' rel='noopener noreferrer'>A24</a>. Used for portfolio purposes only.</p>
       </footer>

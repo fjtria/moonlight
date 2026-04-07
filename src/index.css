@@ -1,11 +1,5 @@
 @import "tailwindcss";
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 :root {
   --light: #EEE;
   --dark: #111;
@@ -16,6 +10,15 @@
   font-family: "KumbhSans", sans-serif;
   color: var(--light);
   background-color: var(--dark);
+}
+
+a {
+  text-decoration: underline;
+}
+
+a:hover {
+  cursor: pointer;
+  color: var(--primary);
 }
 
 @font-face {

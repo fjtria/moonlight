@@ -1,7 +1,29 @@
+p {
+  font-weight: 500;
+}
+
+footer {
+  text-align: center;
+}
+
 .site-title {
   color: var(--primary);
   font-weight: 200;
   font-size: 12vw;
   letter-spacing: 2vw;
   text-shadow: 0 0 24px var(--primary);
+}
+
+.section-title {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.tinted-section {
+  background-color: #CC83CB66;
+}
+
+.tinted-section-title {
+  color: var(--light);
+  font-weight: 700;
 }
