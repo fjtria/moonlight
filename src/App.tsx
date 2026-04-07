@@ -34,7 +34,7 @@ function App() {
     offset: ['start end', 'end start'],
   })
   const heroMove = useTransform(heroParallaxProgress, [1, 0], ['-15%', '15%'])
-  const heroTextMove = useTransform(heroParallaxProgress, [0, 1], [250, -250])
+  const heroTextMove = useTransform(heroParallaxProgress, [0, 1], [300, -300])
 
   // gallery horizontal scroll
   const galleryRef = useRef(null)
@@ -57,7 +57,7 @@ function App() {
             scale: heroScale,
             transition: 'opacity 0.3s linear' 
           }}
-          className='overflow-clip object-cover h-full absolute inset-0'
+          className='object-cover h-full absolute inset-0'
           src={heroImg}
           alt='Boy looks out towards the ocean. Screencap from Moonlight (2016).'
         />
