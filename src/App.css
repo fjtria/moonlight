@@ -1,5 +1,16 @@
-p {
-  font-weight: 500;
+h6 {
+  padding-bottom: 0.5rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+a {
+  text-decoration: underline;
+}
+
+a:hover {
+  cursor: pointer;
+  color: var(--accent);
 }
 
 footer {
@@ -7,16 +18,15 @@ footer {
 }
 
 .site-title {
-  color: var(--primary);
-  font-weight: 200;
+  color: var(--accent);
+  font-weight: 100;
   font-size: 12vw;
   letter-spacing: 2vw;
-  text-shadow: 0 0 24px var(--primary);
+  text-shadow: 0 0 24px var(--accent);
 }
 
 .section-title {
-  color: var(--primary);
-  font-weight: 700;
+  color: var(--accent);
 }
 
 .tinted-section {
@@ -24,6 +34,5 @@ footer {
 }
 
 .tinted-section-title {
-  color: var(--light);
-  font-weight: 700;
+  color: var(--primary);
 }

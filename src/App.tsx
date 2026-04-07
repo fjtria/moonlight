@@ -7,13 +7,13 @@ function App() {
 
   return (
     <>
-      <div id='hero' className='relative h-screen'>
+      <div id='hero' className='h-screen'>
         <img className='object-cover h-full absolute inset-0' src={heroImg} alt='Boy looks out towards the ocean. Screencap from Moonlight (2016).'/>
         <h1 className='site-title uppercase absolute inset-0 flex justify-center items-center'>Moonlight</h1>
       </div>
 
-      <div id='summary' className='p-8 bg-gray relative flex flex-col gap-4'>
-        <div className='grid grid-cols-2 gap-4'>
+      <div id='summary' className='p-8 md:py-32 lg:px-16 xl:px-32 flex flex-col md:grid grid-cols-2 gap-8 md:gap-12 xl:gap-24'>
+        <div className='grid grid-cols-2 md:grid-cols-3 gap-8'>
           <div className='flex flex-col'>
             <h6 className='section-title uppercase'>Director</h6>
             <p>Barry Jenkins</p>
@@ -34,11 +34,11 @@ function App() {
         </div>
       </div>
 
-      <div className='tinted-section flex flex-col'>
+      <div className='tinted-section flex flex-col md:grid md:grid-cols-2'>
         <div>
-          <img className='p-6' src={moviePoster} alt='Poster for Moonlight (2016).'/>
+          <img className='p-6 md:p-0' src={moviePoster} alt='Poster for Moonlight (2016).'/>
         </div>
-        <div className='p-8 grid grid-cols-2 gap-4'>
+        <div className='p-8 xl:p-12 flex flex-col lg:grid lg:grid-cols-2 gap-8 md:justify-center lg:items-center'>
           <div className='flex flex-col '>
             <h6 className='tinted-section-title uppercase'>Distributed by</h6>
             <p>A24</p>            
@@ -56,7 +56,7 @@ function App() {
 
       </div>
 
-      <div id='cast-crew' className='tinted-section p-8 flex flex-col gap-8'>
+      <div id='cast-crew' className='tinted-section p-8 md:py-32 lg:px-16 xl:px-32 flex flex-col md:grid md:grid-cols-2 gap-8 md:gap-16 xl:gap-24'>
         <div>
           <h6 className='tinted-section-title uppercase'>Crew</h6>
           <p><span className='uppercase'>Screenplay</span>: Barry Jenkins</p>
@@ -80,27 +80,30 @@ function App() {
         </div>
       </div>
 
-      <div id='awards' className='p-8'>
+      <div id='awards' className='p-8 md:py-32 lg:px-16 xl:px-32'>
         <h6 className='section-title uppercase'>Awards</h6>
-        <div className='flex flex-col'>
-          <p>2017 Academy Award Winner</p>
-          <p>Best Picture</p>
+        <div className='flex flex-col gap-4'>
+          <div className='flex flex-col'>
+            <p>2017 Academy Award Winner</p>
+            <p>Best Picture</p>
+          </div>
+          <div className='flex flex-col'>
+            <p>2017 Academy Award Winner</p>
+            <p>Best Adapted Screenplay</p>
+          </div>
+          <div className='flex flex-col'>
+            <p>2017 Academy Award Winner</p>
+            <p>Best Supporting Actor, Mahershala Ali</p>
+          </div>
+          <div className='flex flex-col'>
+            <p>2017 Golden Globe Award Winner</p>
+            <p>Best Picture (Drama)</p>
+          </div>
         </div>
-        <div className='flex flex-col'>
-          <p>2017 Academy Award Winner</p>
-          <p>Best Adapted Screenplay</p>
-        </div>
-        <div className='flex flex-col'>
-          <p>2017 Academy Award Winner</p>
-          <p>Best Supporting Actor, Mahershala Ali</p>
-        </div>
-        <div className='flex flex-col'>
-          <p>2017 Golden Globe Award Winner</p>
-          <p>Best Picture (Drama)</p>
-        </div>
+        
       </div>
 
-      <footer className='m-16 flex flex-col justify-center items-center'>
+      <footer className='p-16 md:pt-32 flex flex-col justify-center items-center'>
         <p>Prod. 2026 by <a href='https://fjtria.github.io/' target='_blank' rel='noopener noreferrer'>FJTRIA</a></p>
         <p>All media property of <a href='https://a24films.com/films/moonlight' target='_blank' rel='noopener noreferrer'>A24</a>. Used for portfolio purposes only.</p>
       </footer>
