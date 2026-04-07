@@ -1,9 +1,31 @@
 import './App.css'
-
-import heroImg from './assets/images/hero.jpg'
+import { useRef } from 'react'
+import { motion, useScroll, useTransform } from 'motion/react'
+import heroImg from './assets/images/hero.webp'
 import moviePoster from './assets/images/poster.webp'
+import still1 from './assets/images/still-1.webp'
+import still2 from './assets/images/still-2.webp'
+import still3 from './assets/images/still-3.webp'
+import still4 from './assets/images/still-4.webp'
+import still5 from './assets/images/still-5.webp'
+import still6 from './assets/images/still-6.webp'
+import still7 from './assets/images/still-7.webp'
+import still8 from './assets/images/still-8.webp'
+import still9 from './assets/images/still-9.webp'
+import still10 from './assets/images/still-10.webp'
 
 function App() {
+  const containerRef = useRef(null)
+    const { scrollYProgress } = useScroll({
+        target: containerRef,
+        offset: ["start start", "end end"],
+    })
+
+    const ITEM_WIDTH = 768; // 48 rem
+    const GAP = 18;
+
+    const totalDistance = 9 * (ITEM_WIDTH + GAP) 
+    const x = useTransform(scrollYProgress, [0, 1], [0, -totalDistance + ITEM_WIDTH - GAP])
 
   return (
     <>
@@ -12,7 +34,7 @@ function App() {
         <h1 className='site-title uppercase absolute inset-0 flex justify-center items-center'>Moonlight</h1>
       </div>
 
-      <div id='summary' className='p-8 md:py-32 lg:px-16 xl:px-32 flex flex-col md:grid grid-cols-2 gap-8 md:gap-12 xl:gap-24'>
+      <div id='summary' className='p-8 md:py-32 lg:px-16 xl:px-32 xl:py-48 flex flex-col md:grid grid-cols-2 gap-8 md:gap-12 xl:gap-24'>
         <div className='grid grid-cols-2 md:grid-cols-3 gap-8'>
           <div className='flex flex-col'>
             <h6 className='section-title uppercase'>Director</h6>
@@ -52,37 +74,55 @@ function App() {
         </div>
       </div>
 
-      <div id='gallery'>
-
+      <div id='gallery' ref={containerRef} className='p-8 md:py-32 lg:px-16 xl:px-32 xl:py-48'>
+        <div className='gallery-container'>
+          <motion.div style={{ x }} className='gallery-imgs'>
+            <img className='still' src={still1} alt=''></img>
+            <img className='still' src={still2} alt=''></img>
+            <img className='still' src={still3} alt=''></img>
+            <img className='still' src={still4} alt=''></img>
+            <img className='still' src={still5} alt=''></img>
+            <img className='still' src={still6} alt=''></img>
+            <img className='still' src={still7} alt=''></img>
+            <img className='still' src={still8} alt=''></img>
+            <img className='still' src={still9} alt=''></img>
+            <img className='still' src={still10} alt=''></img>
+          </motion.div>
+        </div>
       </div>
 
-      <div id='cast-crew' className='tinted-section p-8 md:py-32 lg:px-16 xl:px-32 flex flex-col md:grid md:grid-cols-2 gap-8 md:gap-16 xl:gap-24'>
+      <div id='cast-crew' className='tinted-section p-8 md:py-32 lg:px-16 xl:px-32 xl:py-48 flex flex-col md:grid md:grid-cols-2 gap-8 md:gap-16 xl:gap-24'>
         <div>
           <h6 className='tinted-section-title uppercase'>Crew</h6>
-          <p><span className='uppercase'>Screenplay</span>: Barry Jenkins</p>
-          <p><span className='uppercase'>Story</span>: Tarell Alvin McCraney</p>
-          <p><span className='uppercase'>Producers</span>: Adele Romanski, Dede Gardner, Jeremy Kleiner</p>
-          <p><span className='uppercase'>Music</span>: Nicholas Britell</p>
-          <p><span className='uppercase'>Cinematographer</span>: James Laxton</p>
-          <p><span className='uppercase'>Editors</span>: Joi McMillon, Nat Sanders</p>
+          <div className='flex flex-col gap-2'>
+            <p><span className='uppercase'>Screenplay</span>: Barry Jenkins</p>
+            <p><span className='uppercase'>Story</span>: Tarell Alvin McCraney</p>
+            <p><span className='uppercase'>Producers</span>: Adele Romanski, Dede Gardner, Jeremy Kleiner</p>
+            <p><span className='uppercase'>Music</span>: Nicholas Britell</p>
+            <p><span className='uppercase'>Cinematographer</span>: James Laxton</p>
+            <p><span className='uppercase'>Editors</span>: Joi McMillon, Nat Sanders</p>
+          </div>
+          
         </div>
         <div>
           <h6 className='tinted-section-title uppercase'>Cast</h6>
-          <p>Trevante Rhodes as Adult Chiron</p>
-          <p>Ashton Sanders as Teen Chiron</p>
-          <p>Alex Hibbert as Child Chiron</p>
-          <p>André Holland as Adult Kevin</p>
-          <p>Jharrel Jerome as Teen Kevin</p>
-          <p>Jaden Piner as Child Kevin</p>
-          <p>Janelle Monáe as Teresa</p>
-          <p>Naomie Harris as Paula</p>
-          <p>Mahershala Ali as Juan</p>
+          <div className='flex flex-col gap-2'>
+            <p>Trevante Rhodes as Adult Chiron</p>
+            <p>Ashton Sanders as Teen Chiron</p>
+            <p>Alex Hibbert as Child Chiron</p>
+            <p>André Holland as Adult Kevin</p>
+            <p>Jharrel Jerome as Teen Kevin</p>
+            <p>Jaden Piner as Child Kevin</p>
+            <p>Janelle Monáe as Teresa</p>
+            <p>Naomie Harris as Paula</p>
+            <p>Mahershala Ali as Juan</p>
+          </div>
         </div>
       </div>
 
-      <div id='awards' className='p-8 md:py-32 lg:px-16 xl:px-32'>
+      <div id='awards' className='p-8 md:py-32 lg:px-16 xl:px-32 xl:py-48'>
         <h6 className='section-title uppercase'>Awards</h6>
-        <div className='flex flex-col gap-4'>
+        <div className='flex flex-col gap-2'>
           <div className='flex flex-col'>
             <p>2017 Academy Award Winner</p>
             <p>Best Picture</p>
@@ -103,7 +143,7 @@ function App() {
         
       </div>
 
-      <footer className='p-16 md:pt-32 flex flex-col justify-center items-center'>
+      <footer className='p-16 md:pt-32 flex flex-col gap-2 justify-center items-center'>
         <p>Prod. 2026 by <a href='https://fjtria.github.io/' target='_blank' rel='noopener noreferrer'>FJTRIA</a></p>
         <p>All media property of <a href='https://a24films.com/films/moonlight' target='_blank' rel='noopener noreferrer'>A24</a>. Used for portfolio purposes only.</p>
       </footer>
