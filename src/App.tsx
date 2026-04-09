@@ -2,6 +2,7 @@ import './App.css'
 import { useRef } from 'react'
 import { useMediaQuery } from 'usehooks-ts'
 import { easeInOut, motion, useScroll, useTransform } from 'motion/react'
+import { UseSmoothScroll } from 'smooth-motion'
 import heroImg from './assets/images/hero.webp'
 import moviePoster from './assets/images/poster.webp'
 import still1 from './assets/images/still-1.webp'
@@ -49,6 +50,7 @@ function App() {
 
   return (
     <>
+      <UseSmoothScroll speed={1.5}/>
       <div ref={heroRef} id='hero' className='h-screen'>
         <motion.img 
           style={{
