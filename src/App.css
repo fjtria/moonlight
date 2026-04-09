@@ -17,8 +17,8 @@ a:hover {
   color: var(--accent);
 }
 
-footer {
-  text-align: center;
+footer hr {
+  box-shadow: 0 0 8px var(--accent);
 }
 
 .site-title {
