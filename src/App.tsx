@@ -68,7 +68,7 @@ function App() {
 
   return (
     <>
-      <UseSmoothScroll speed={1.5}/>
+      <UseSmoothScroll/>
 
       {/* HERO */}
       <div ref={heroRef} id='hero' className='h-screen'>
